@@ -3,10 +3,17 @@
 ## Java
 #### Install Java 11 or higher from here: https://www.oracle.com/java/technologies/javase-jdk16-downloads.html
 #### Configure Environment Variables: 
-##### JAVA_Home points to 
-`C:\Program Files\Java\jdk-11.0.12`
+##### JAVA_Home within System Variables points to 
+
+`C: ~\jdk-11.0.12`
 
 <img src = "./JAVA_HOME.jpeg"/>
+
+##### JAVA_Home within the System Variables path variable
+
+`C: ~\jdk-11.0.12\bin`
+
+<img src = "./javaEnvironmentPathToBin.jpg"/>
 
 ##### Verify Java Installation and Environment Variable Setup through CLI:
 `java --version`
