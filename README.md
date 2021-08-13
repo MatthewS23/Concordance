@@ -29,11 +29,12 @@
 `mvn package`
 
 # Run the application:
-from the *\my-app directory
+from the ~\my-app directory
 
 `java -cp target/my-app-1.0-SNAPSHOT.jar com.mycompany.app.App fileName.txt`
 
 the test file test1.txt is included in the repository 
+
 `java -cp target/my-app-1.0-SNAPSHOT.jar com.mycompany.app.App test1.txt`
 
 
