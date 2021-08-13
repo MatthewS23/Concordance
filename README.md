@@ -37,8 +37,7 @@ the test file test1.txt is included in the repository
 `java -cp target/my-app-1.0-SNAPSHOT.jar com.mycompany.app.App test1.txt`
 
 
-<object data = "/concordance%20.pdf" type ="application/pdf" width="100%">
-</object>
+<img src = "./concordance.jpg"/>
 
 
 
