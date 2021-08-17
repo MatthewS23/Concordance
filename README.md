@@ -32,11 +32,14 @@
 <img src = "pictures/mvnVerfification.jpg"/>
 
 # Compile:
-### cd into parent directory
+
+From the ~\Concordance directory
+
 `mvn package`
 
 # Run the application:
-from the ~\my-app directory
+
+from the ~\Concordance directory
 
 `java -cp target/my-app-1.0-SNAPSHOT.jar path.to.mainclass fileName.txt`
 
