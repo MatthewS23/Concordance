@@ -34,17 +34,17 @@ public class App
             //cumulativeWordsWithDuplicates:
             String[] sectionArrayOfWords2 = dataonfile.split("\\s+");
             ArrayList<String> wordsList2 = new ArrayList<String>(Arrays.asList(sectionArrayOfWords2));
-            sortingObject.setcumulativeWordsWithDuplicates(wordsList2);
+            sortingObject.cumulativeWordsWithDuplicates(wordsList2);
 
             //cumulativeWordsWithoutDuplicates:
             String[] sectionArrayOfWords3 = dataonfile.split("\\s+");
             ArrayList<String> wordsList3 = new ArrayList<String>(Arrays.asList(sectionArrayOfWords3));
-            sortingObject.setCumulativeWordsWithoutDuplicates(wordsList3);
+            sortingObject.cumulativeWordsWithoutDuplicates(wordsList3);
 
             if (dataonfile.isBlank()) {
 
                 //Map TextBlock to Integer
-                sortingObject.setTextSectionsIntegerMapping(textSectionFrequency);
+                sortingObject.TextSectionsIntegerMapping(textSectionFrequency);
                 textSectionFrequency++;
                 //clear TextSection
                 sortingObject.clearCumulativeTextSection();
@@ -53,18 +53,18 @@ public class App
                 //append final line to cumulative lines
                 String[] sectionArrayOfWords = dataonfile.split("\\s+");
                 ArrayList<String> wordsList = new ArrayList<String>(Arrays.asList(sectionArrayOfWords));
-                sortingObject.setTextSection(wordsList);
-                sortingObject.setTextSectionsIntegerMapping(textSectionFrequency);
+                sortingObject.textSection(wordsList);
+                sortingObject.TextSectionsIntegerMapping(textSectionFrequency);
             } else {
                 String[] sectionArrayOfWords = dataonfile.split("\\s+");
                 ArrayList<String> wordsList = new ArrayList<String>(Arrays.asList(sectionArrayOfWords));
-                sortingObject.setTextSection(wordsList);
+                sortingObject.textSection(wordsList);
             }
         }
 
-        implementSolution.setFinalSolution(sortingObject.getCumulativeWordsWithoutDuplicates(), sortingObject.getTextSectionIntegerMapping());
-        implementSolution.sortFinalSolution(implementSolution.getFinalSolution());
-        myToString(implementSolution.getFinalSolutionSorted());
+        implementSolution.solution(sortingObject.getCumulativeWordsWithoutDuplicates(), sortingObject.getTextSectionIntegerMapping());
+        implementSolution.finalSolution(implementSolution.getSolution());
+        myToString(implementSolution.getFinalSolution());
 
     }
 

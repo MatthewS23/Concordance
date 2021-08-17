@@ -14,13 +14,9 @@ public class StructureData {
     private Set<String> cumulativeWordsWithoutDuplicates;
     private ArrayList<String> cumulativeWordsWithDuplicates;
 
-    public Set<String> getCumulativeWordsWithoutDuplicates(){
-        return cumulativeWordsWithoutDuplicates;
-    }
-
     //Receives an ArrayList of Strings that is read from a single line through main from a text file passed in
     //Cumulatively adds to a private instance ArrayList 'textSection,' for mapping an integer to a section of text
-    public void setTextSection(ArrayList<String> currentLine) {
+    public void textSection(ArrayList<String> currentLine) {
 
         if(getcumulativeTextSection() == null) {
             textSection = currentLine;
@@ -34,7 +30,7 @@ public class StructureData {
 
     //Receives an ArrayList of Strings that is read from a single line through main from a text file passed in
     //Cumulatively adds to a private instance Set 'cumulativeTextSectionWithoutDuplicates,' to find all words on the text file(duplicates excluded)
-    public void setCumulativeWordsWithoutDuplicates(ArrayList<String> currentLine) {
+    public void cumulativeWordsWithoutDuplicates(ArrayList<String> currentLine) {
         if(cumulativeWordsWithoutDuplicates == null){
             Set<String> conversion = currentLine.stream().collect(Collectors.toSet());
             this.cumulativeWordsWithoutDuplicates = conversion;
@@ -50,7 +46,7 @@ public class StructureData {
     //receives an integer and sets the  that is mapped to a collection of text that is defined by a collection of strings seperated-
     //- by a blank line on a file, the beginning of file or the end
     //sets 'textSectionIntegerMapping' HashMap
-    public void setTextSectionsIntegerMapping(int concordanceFrequency) {
+    public void TextSectionsIntegerMapping(int concordanceFrequency) {
         if(textSectionIntegerMapping == null){
             textSectionIntegerMapping = new HashMap<>();
         }
@@ -65,7 +61,7 @@ public class StructureData {
     }
 
     //stores a cumulative list of words containing duplicates
-    public void setcumulativeWordsWithDuplicates(ArrayList<String> currentLine) {
+    public void cumulativeWordsWithDuplicates(ArrayList<String> currentLine) {
         if(cumulativeWordsWithDuplicates == null) {
             this.cumulativeWordsWithDuplicates = currentLine;
         }
@@ -84,5 +80,8 @@ public class StructureData {
     }
     public ArrayList<String> getcumulativeWordsWithDuplicates(){
         return cumulativeWordsWithDuplicates;
+    }
+    public Set<String> getCumulativeWordsWithoutDuplicates(){
+        return cumulativeWordsWithoutDuplicates;
     }
 }

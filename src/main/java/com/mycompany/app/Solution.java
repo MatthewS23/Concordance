@@ -5,14 +5,14 @@ import java.util.stream.Collectors;
 
 public class Solution {
 
-    private HashMap<String, Concordance > finalSolution;
-    private TreeMap<String, Concordance> finalSolutionSorted;
+    private HashMap<String, Concordance > solution;
+    private TreeMap<String, Concordance> finalSolution;
 
     //Constructs the final solution into a Hashmap of:
     // key: individual words received through 'cumulativeWordsWithoutDuplicates'
     // value: Concordance object with word totals and frequencies
-    public void setFinalSolution(Set<String> cumulativeWordsWithoutDuplicates, HashMap<Integer, ArrayList<String>> textSectionIntegerMapping){
-        finalSolution = new HashMap<String, Concordance>();
+    public void solution(Set<String> cumulativeWordsWithoutDuplicates, HashMap<Integer, ArrayList<String>> textSectionIntegerMapping){
+        solution = new HashMap<String, Concordance>();
         List<String> conversion = cumulativeWordsWithoutDuplicates.stream().collect(Collectors.toList());
         for(int i = 0; i < cumulativeWordsWithoutDuplicates.size(); i++){
             int count = occurenceCount(conversion.get(i), textSectionIntegerMapping);
@@ -20,13 +20,14 @@ public class Solution {
             Concordance instance = new Concordance();
             instance.setOccurencesCount(count);
             instance.setFrequencies(frequencies);
-            finalSolution.put(conversion.get(i).toLowerCase(), instance);
+            solution.put(conversion.get(i).toLowerCase(), instance);
         }
     }
 
-    public void sortFinalSolution(HashMap<String, Concordance > finalSolution){
-        finalSolutionSorted = new TreeMap<>();
-        finalSolutionSorted.putAll(getFinalSolution());
+    //Puts solution into alphabetical order
+    public void finalSolution(HashMap<String, Concordance > finalSolution){
+        this.finalSolution = new TreeMap<>();
+        this.finalSolution.putAll(getSolution());
     }
 
     //Receives the Map of integers mapped to text sections and a single word
@@ -57,10 +58,10 @@ public class Solution {
         return frequencies;
     }
 
-    public HashMap<String, Concordance> getFinalSolution() {
-        return finalSolution;
+    public HashMap<String, Concordance> getSolution() {
+        return solution;
     }
-    public  TreeMap<String, Concordance> getFinalSolutionSorted() {
-        return finalSolutionSorted;
+    public  TreeMap<String, Concordance> getFinalSolution() {
+        return finalSolution;
     }
 }
