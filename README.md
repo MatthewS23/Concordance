@@ -27,7 +27,7 @@
 
 `mvn -v`
 
-#####If correctly configured the command line will display the Maven version:
+##### If correctly configured the command line will display the Maven version:
 
 <img src = "pictures/mvnVerfification.jpg"/>
 
