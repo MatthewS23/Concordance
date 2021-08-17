@@ -7,15 +7,18 @@ import java.util.*;
 
 public class App 
 {
-    public static void main( String[] args )
+    public static void main( String[] args ) throws FileNotFoundException
     {
         int textSectionFrequency = 1;
+
         // Read text from file thorough scanner:
-        File fileReceived = new File(args[0]);
         Scanner sc = null;
         try {
+            File fileReceived = new File(args[0]);
             sc = new Scanner(fileReceived);
-        } catch (FileNotFoundException e) {
+        }
+        catch (FileNotFoundException e) {
+            e.printStackTrace();
         }
 
         //Object to Structure the date into a map to sort concurrences
@@ -50,12 +53,12 @@ public class App
                 //append final line to cumulative lines
                 String[] sectionArrayOfWords = dataonfile.split("\\s+");
                 ArrayList<String> wordsList = new ArrayList<String>(Arrays.asList(sectionArrayOfWords));
-                sortingObject.setCumulativeTextSection(wordsList);
+                sortingObject.setTextSection(wordsList);
                 sortingObject.setTextSectionsIntegerMapping(textSectionFrequency);
             } else {
                 String[] sectionArrayOfWords = dataonfile.split("\\s+");
                 ArrayList<String> wordsList = new ArrayList<String>(Arrays.asList(sectionArrayOfWords));
-                sortingObject.setCumulativeTextSection(wordsList);
+                sortingObject.setTextSection(wordsList);
             }
         }
 
@@ -65,6 +68,7 @@ public class App
 
     }
 
+    //Prints the final solution, a TreeMap of Concordance Objects
     public static void myToString(TreeMap<String, Concordance> finalSolution) {
         for (Map.Entry<String, Concordance> entry : finalSolution.entrySet()) {
             System.out.println(entry.getKey() + " " + entry.getValue());
