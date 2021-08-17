@@ -7,7 +7,7 @@
 
 <img src = "pictures/JAVA_HOME.jpeg"/>
 
-#####Create a new path within the 'path' System Variable that points to the `C: ~\jdk-11.0.12\bin` directory
+##### Create a new path within the 'path' System Variable that points to the `C: ~\jdk-11.0.12\bin` directory
 
 <img src = "pictures/javaEnvironmentPathToBin.jpg"/>
 
